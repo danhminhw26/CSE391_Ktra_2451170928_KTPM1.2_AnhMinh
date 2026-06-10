@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh Sach San Pham</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#"> Quản Lý Sản Phẩm </a>
+      </div>
+    </nav>
+    <div class="container mt-4 col-md-6">
+      <h1 class="mb-4">Thêm Sản Phẩm</h1>
+        <form action="/products" method="POST">
+            <div class="mb-3">
+            <label for="name" class="form-label">Tên Sản Phẩm</label>
+            <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <div class="mb-3">
+            <label for="category" class="form-label">Danh Mục</label>
+            <input type="text" class="form-control" id="category" name="category" required />
+            </div>
+            <div class="mb-3">
+            <label for="price" class="form-label">Giá</label>
+            
+            <input
+                type="number"
+                step="0.01"
+                class="form-control"
+                id="price"
+                name="price"
+                required
+            />
+            <label for="quantity" class="form-label">Trạng thái</label>
+            <select class="form-control" id="quantity" name="quantity" required>
+                <option value="Còn hàng">Còn hàng</option>
+                <option value="Hết hàng">Hết hàng</option>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+            <button type="reset" class="btn btn-secondary">Làm Mới</button>
+        </form>
+    </div>
+    <div class="container mt-4 col-md-6">
+      <h1 class="mb-4">Danh Sách Sản Phẩm</h1>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Danh Mục</th>
+            <th>Giá</th>
+            <th>Trạng Thái</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Dữ liệu sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+        </tbody>
+      </table>
+  </body>
+</html>
